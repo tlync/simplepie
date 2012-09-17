@@ -338,10 +338,9 @@ class SimplePie_Sanitize
 
 				// Move everything from the body to the root
 				$real_body = $document->getElementsByTagName('body')->item(0)->childNodes->item(0);
-				$document->replaceChild($real_body, $document->firstChild);
 
 				// Finally, convert to a HTML string
-				$data = trim($document->saveHTML());
+				$data = trim($document->saveHTML($real_body));
 
 				if ($this->remove_div)
 				{
