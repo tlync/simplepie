@@ -80,7 +80,7 @@ class SimplePie_Misc
 	public static function absolutize_url($relative, $base)
 	{
 		$iri = SimplePie_IRI::absolutize(new SimplePie_IRI($base), $relative);
-		return $iri->get_uri();
+		return $iri ? $iri->get_uri() : false;
 	}
 
 	/**
